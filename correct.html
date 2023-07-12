@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22歲生日快樂</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        background-color:  #d4d4db;
+    }
+    h1{
+        display: inline-block;
+        height: 10vh;
+        line-height: 10vh;
+    }
+    .wrap{
+        height: 85vh;
+        margin: auto;
+    }
+    .col{
+        width: 300px;
+        height: 300px;
+        background-color: #d1a5a5;
+        margin: 300px 0px;
+        position: relative;
+        top: 50%;  
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .col:nth-child(1){
+        position: relative;
+        background-color: #5b3838;
+        width: 300px;
+        background-image: url('images/main.jpg');
+        margin-top: -90px;
+        background-position: 0px -200px;
+        background-size: cover;
+        border-radius: 10px;
+    }
+    .col:nth-child(1)::before{
+        position: absolute;
+        content: '內在掏出來，看得見開心';
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 300px;
+        background-color: #edf7fa;
+        right: 0;
+        bottom: -300px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    .col:nth-child(2){
+        position: relative;
+        background-image: url('images/road.jpg');
+        background-size: cover;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    .col:nth-child(2)::before{
+        position: absolute;
+        content: '未來的旅途，花為你祝福';
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 300px;
+        background-color: #edf7fa;
+        right: 0;
+        bottom: -300px;
+        border-radius: 10px;
+    }
+    .col:nth-child(3){
+        position: relative;
+        background-image: url('images/princess.jpg');
+        background-size: cover;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    .col:nth-child(3)::before{
+        position: absolute;
+        content: '願你的人生，公主般燦爛';
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 300px;
+        background-color: #edf7fa;
+        right: 0;
+        bottom: -300px;
+        border-radius: 10px;
+    }
+    @media screen and (min-width:765px){
+        .wrap{
+            width: 1020px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .col{
+            position: relative;
+            margin: 0px 15px;
+            top: 0;  
+            left: 0;
+            transform: translate( 0%, 0%);
+        }
+        .col:nth-child(1){
+            margin-top: 0px;
+        }
+        .col:nth-child(3):before,.col:nth-child(2):before,.col:nth-child(1):before{
+            height: 15%;
+            line-height: 50px;
+            bottom: 300px;
+        }
+    }
+</style>
+<body>
+    <h1>\ 答案是 : 陳庭卉 ! /</h1>
+    <h2>0712 生日快樂~ 祝您22歲行大運!</h2>
+    <div class="wrap">
+        <div class="col">
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</body>
+</html>

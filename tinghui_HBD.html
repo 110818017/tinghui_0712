@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜猜大法寶</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    body{
+        text-align: center;
+    }
+    header h1{
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        height: 10vh;
+        line-height: 10vh;
+        background-color: #2943a8;
+        color: antiquewhite;
+    }
+    input::placeholder {
+        color: transparent;
+    }
+    .container{
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        clear: both;
+    }
+    img{
+        vertical-align: bottom;
+        width: 100%;
+        z-index: -2;
+    }
+    .wrap:nth-child(1):before{
+        position: absolute;
+        content: '0712';
+        right: 0px;
+        left: 7px;
+        bottom: 70px;
+        width: 100%;
+        display: inline-block;
+        line-height: 0px;
+        margin: auto;
+        z-index: 0;
+        font-size: 40px;
+    }
+    .wrap{
+        position: relative;
+        width: 350px;
+        margin: 10px auto 0;
+    }
+    input{
+        font-size: 20px;
+        margin: 10px 0 0 0;
+    }
+    .ad{
+       position: fixed;
+       display: flex;
+       top: 0;
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+       height: 110%;
+       background-color: rgba(0, 0, 0, 0.5);
+    }
+    .text{
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 5px solid #2943a8;
+        line-height: 300px;
+    }
+    #close{
+        position: relative;
+        text-decoration: none;
+        border: 2px solid #000;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        line-height: 30px;
+        color: #000;
+        left: -50px;
+        top: -120px;
+        border-radius: 20px;
+    }
+    @media screen and (min-width:960px) {
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clear: both;
+        }
+    }
+</style>
+<body>
+    <header><h1><b>猜猜多拉?夢要掏出什麼呢 !?</b></h1></header>
+    <div class="container">
+        <div class="wrap">
+            <img src="https://5b0988e595225.cdn.sohucs.com/images/20180323/263d077f51db4280b7e0d9e501c459b1.jpeg" alt="">
+        </div>
+        <div class="wrap">
+            <label for="date">請輸入關鍵字：[提示]口袋上 
+                <h1></h1>
+                <form name="action" id="action" method="post">
+                    <input type="text" name="date" id="date" placeholder="1" >
+                    <input type="submit" name="btnSubmit" id="btnSubmit">
+                </form>
+            </label>
+        </div>
+        <div class="ad">
+            <div class="text"><b><h2>密碼輸入錯誤 !</h2></b></div>
+            <a href="#" id="close">
+                <p>X</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            window.onfocus = hide;
+            function hide(){
+                $('.ad').hide();
+            }
+            window.onblur = hide1;
+            function hide1(){
+                $('.ad').hide();
+            }
+            
+            $('#close').click(function(){
+                $('.ad').slideUp(".3s");
+            })
+            $('#btnSubmit').click(function(){
+                var password = $("#date").val();
+                if( password == '0712'){
+                    $('.ad').hide();
+                    var url = "correct.html";
+                    window.location.href = url;
+                    alert('correct');
+                }else{
+                    $('.ad').fadeIn("1s");
+                }
+               
+            })
+            
+        })
+    </script>
+</body>
+</html>
