@@ -132,7 +132,7 @@
             }
             window.onblur = hide1;
             function hide1(){
-                $('.ad').hide();
+                $('.ad').detach();
             }
             
             $('#close').click(function(){
@@ -146,7 +146,13 @@
                     window.location.href = url;
                     alert('correct');
                 }else{
-                    $('.ad').fadeIn("1s");
+                    $('.wrap').append('<div class="ad">
+            <div class="text"><b><h2>密碼輸入錯誤 !</h2></b></div>
+            <a href="#" id="close">
+                <p>X</p>
+            </a>
+        </div>')
+                    $('.ad').fadeIn("1s").delay(.5s).detach();
                 }
                
             })
