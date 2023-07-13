@@ -136,8 +136,7 @@
             }
             
             $('#close').click(function(){
-                $('.ad').slideUp(".3s").delay('.2s').detach();
-                $('.wrap').append(" <div class='ad'><div class='text'><b><h2>密碼輸入錯誤 !</h2></b></div><a href='' id='close'><p>X</p></a></div>")
+                $('.ad').slideUp(".3s");
             })
             $('#btnSubmit').click(function(){
                 var password = $("#date").val();
@@ -147,8 +146,7 @@
                     window.location.href = url;
                     alert('correct');
                 }else{
-                    $('.ad').fadeIn(".5s").delay('.2s').detach();
-                    $('.wrap').append(" <div class='ad'><div class='text'><b><h2>密碼輸入錯誤 !</h2></b></div><a href='' id='close'><p>X</p></a></div>")
+                    $('.ad').fadeIn(".5s");
                 }
                
             })
